@@ -1,9 +1,8 @@
 
-<div class="eventPartial">
+<div class="eventPartial" style="background-image: url('{{this.picture}}')">
     <h2><a href="event/{{this.id}}">{{this.title}}</a></h2>
 <aside>{{this.date}}</aside>
-<p>{{this.description}}</p>
-<p>tags:{{this.type}}</p><p>attending: {{this.attendees}}</p>
+<p>tags:{{this.type}}</p><p>{{this.attendees}} attending</p>
 <form action="/dashboard/attend" method="POST">
                     <input type="hidden" name="_id" value={{this._id}}>
                     <button id="delete" class="btn">Attend</button>

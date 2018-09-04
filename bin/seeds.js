@@ -7,21 +7,21 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 
 const event = [
 	{
-		title: 'URBAN ART WEEK - tour',
-		picture: 'https://source.unsplash.com/xb0wLfZH9Zo/1600x900',
+		title: 'Museum stroll',
+		picture: 'https://source.unsplash.com/PGdMhonLLZk/1600x900',
 		description: 'lets go have a walk',
 		city: 'Berlin',
-		date: 2018 + ', ' + 11 + ', ' + 21,
+		date: 2018 + ', ' + 09 + ', ' + 21,
 		type: 'Art',
 		attendees: [],
 		venue: 'https://www.google.de/maps/search/kw/@52.508199,13.3070429,12z/data=!3m1!4b1'
 	},
 	{
-		title: 'Film ohne grenzen',
-		picture: 'https://source.unsplash.com/xb0wLfZH9Zo/1600x900',
+		title: 'Festival',
+		picture: 'https://source.unsplash.com/ntIz9ciFKPs/1600x900',
 		description: 'lets go to the movies',
 		city: 'Berlin',
-		date: 2018 + ', ' + 10 + ', ' + 24,
+		date: 2018 + ', ' + 09 + ', ' + 15,
 		type: 'Cinema',
 		attendees: [],
 		venue: 'https://www.google.de/maps/search/kw/@52.508199,13.3070429,12z/data=!3m1!4b1'

@@ -1,17 +1,39 @@
 body {
-  padding: 50px;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00b7ff; }
 
+nav {
+  position: absolute;
+  padding: 0.5vh 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3vh;
+  width: 100vw;
+  border-bottom: 2px solid black; }
+
+#body-container {
+  top: 3vh;
+  padding: 16px;
+  position: relative; }
+
 .event-container {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  flex-wrap: wrap; }
 
 .eventPartial {
   padding: 2vh 1vw;
-  background-color: antiquewhite; }
+  background-color: antiquewhite;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+  .eventPartial h2 a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700; }
 
 .btn {
   display: inline-block;
