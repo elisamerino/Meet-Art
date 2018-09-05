@@ -1,14 +1,14 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Company = require("../models/Company");
-const ensureLogin = require("connect-ensure-login");
+const Company = require('../models/Company');
+const ensureLogin = require('connect-ensure-login');
 // const fs = require("fs");
-const User = require("../models/User");
+const User = require('../models/User');
 /* GET home page */
-const util = require("util");
+const util = require('util');
 
-router.get("/", (req, res, next) => {
-    res.render("index");
+router.get('/', (req, res, next) => {
+	res.render('index');
 });
 
 router.get("/user_profile", (req, res, next) => {

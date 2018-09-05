@@ -1,14 +1,24 @@
-<h1> Welcome {{user.username}} ! 
+<h1> Hey, {{user.username}}! What are you up to? 
 </h1>
-<div class="post-list">
+<div id="tag-wrapper">
+    <h3>Filter</h3>
+  {{#each events}}
+    <a href="/dashboard/{{this.type}}">{{this.type}}</a>
+{{/each}}
+    
+</div>
+<div class="event-container">
+<div id="event-wrap">    
+{{#each events}}
+{{> eventPartials this}}
+{{/each}}
+</div>
+<div class="side-container">
     <ul>
         <li>hello</li>
         <li>world</li>
     </ul>
 </div>
-<div class="event-container">
-    {{#each events}}
-{{> eventPartials this}}
-{{/each}}
 </div>
-<a class="btn" href="#">+</a>
+
+<a class="btn" href="/event/new">+</a>
