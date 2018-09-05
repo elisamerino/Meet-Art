@@ -12,23 +12,18 @@ router.get("/dashboard", (req, res) => {
     if (req.user === undefined) {
         console.log("UNDEFINED");
         res.redirect("auth/signup");
+    } else if (req.user.email === undefined && req.user.collection.collectionName === "users") {
+        console.log(req.user.collection.collectionName);
+        res.render("create/create-user", { user: req.user });
+    } else if (req.user.email === undefined && req.user.collection.collectionName === "companies") {
+        console.log(req.user.collection.collectionName);
+        res.render("create/create-company", { user: req.user });
     } else {
-        console.log("USER", req.user);
-        Events.find()
-            .then(events => {
-                //res.send(events);
-                let user = req.user;
-
-                res.render("dashboard", { events, user });
-                // console.log('gettin you some events');
-            })
-            .catch(error => {
-                console.log(error);
-                res.write("uh oh, something went wrong!?");
-            });
-        // res.render("dashboard");
+        res.render("dashboard");
     }
 });
+
+// res.render("dashboard");
 
 router.post("/dashboard/attend", (req, res) => {
     //WE NEED TO RETRIEVE ID OF THE EVENT CLICKED AND ID OF THE USER
