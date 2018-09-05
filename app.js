@@ -8,7 +8,8 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
-
+const ensureLoggedIn = require("connect-ensure-login");
+const fileUpload = require("express-fileupload");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
@@ -32,6 +33,10 @@ const debug = require("debug")(`${app_name}:${path.basename(__filename).split(".
 const app = express();
 
 // Middleware Setup
+app.use(fileUpload(), (req, res, next) => {
+    next();
+});
+
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -84,5 +89,8 @@ app.use("/auth", authRoutes);
 
 const user = require("./routes/user");
 app.use("/user", user);
+
+const company = require("./routes/company");
+app.use("/company", company);
 
 module.exports = app;
