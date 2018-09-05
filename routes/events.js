@@ -14,4 +14,4 @@ const router = express.Router();
 //     res.render("create/post-event");
 // });
 
-// module.exports = router;
+module.exports = router;

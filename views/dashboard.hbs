@@ -1,14 +1,15 @@
 <h1> Welcome {{user.username}} ! 
 </h1>
-<div class="post-list">
-    <ul>
-        <li>hello</li>
-        <li>world</li>
-    </ul>
-</div>
+
 <div class="event-container">
     {{#each events}}
 {{> eventPartials this}}
 {{/each}}
+</div>
+<div class="side-container">
+    <ul>
+        <li>hello</li>
+        <li>world</li>
+    </ul>
 </div>
 <a class="btn" href="#">+</a>

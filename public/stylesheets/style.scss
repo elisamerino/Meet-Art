@@ -19,6 +19,7 @@ nav {
 	.nav {
 	}
 }
+
 #body-container {
 	top: 3vh;
 	padding: 16px;
@@ -29,7 +30,9 @@ nav {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
+
 .eventPartial {
+	width: 75vw;
 	padding: 2vh 1vw;
 	background-color: antiquewhite;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -47,4 +50,13 @@ nav {
 	text-decoration: none;
 	color: black;
 	font-weight: 700;
+}
+
+@media only screen and(min-width: 800px) {
+	.side-container {
+		float: right;
+	}
+	.event-partial {
+		width: 30vw;
+	}
 }

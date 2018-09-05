@@ -10,7 +10,6 @@ const Company = require('../models/Company');
 
 router.get('/dashboard', (req, res) => {
 	if (req.user === undefined) {
-		console.log('UNDEFINED');
 		res.redirect('auth/signup');
 	} else {
 		Events.find()
@@ -33,44 +32,28 @@ router.post('/dashboard/attend', (req, res) => {
 	//WE NEED TO RETRIEVE ID OF THE EVENT CLICKED AND ID OF THE USER
 	const { _id } = req.body;
 	let user = req.user._id;
-	console.log(typeOf.user);
-	Events.findById({ _id: _id }, function(err, event) {
-		const { attendees } = event;
-		if (err) throw err;
-		if (!attendees.includes(user)) {
-			console.log(typeOf.attendees);
-			console.log('FREIER WEG');
+	console.log(typeof user + user);
+
+	Events.findById({ _id: _id }, (err, event) => {
+		if (err) console.log(err);
+
+		if (event.attendees.indexOf(user) === 0) {
+			console.log('already attending');
 		} else {
-			console.log('you are already attending');
+			Events.findByIdAndUpdate(
+				{ _id: _id },
+				{
+					$push: { attendees: user }
+				},
+				{ new: true },
+				(err, Event) => {
+					if (err) console.log(err);
+
+					res.redirect('/dashboard');
+				}
+			);
 		}
-
-		// Events.findByIdAndUpdate(
-		// 	{ _id: _id },
-		// 	{
-		// 		$push: { attendees: user.id }
-		// 	},
-		// 	{ new: true },
-		// 	function(err, Event) {
-		// 		if (err) throw err;
-
-		// 		res.redirect('/dashboard');
-		// 	}
-		// );
 	});
-
-	// Events.findByIdAndUpdate(
-	// 	{ _id: _id },
-	// 	{
-	// 		$push: { attendees: user.id }
-	// 	},
-	// 	{ new: true },
-	// 	function(err, Event) {
-	// 		if (err) throw err;
-
-	// 		res.redirect('/dashboard');
-	// 	}
-	// );
-	//
 });
 
 module.exports = router;
