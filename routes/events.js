@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // const fs = require("fs");
@@ -14,4 +14,4 @@ const router = express.Router();
 //     res.render("create/post-event");
 // });
 
-// module.exports = router;
+module.exports = router;

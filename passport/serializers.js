@@ -3,29 +3,27 @@ const User = require("../models/User");
 const Company = require("../models/Company");
 
 passport.serializeUser((loggedInUser, cb) => {
-    console.log("AT PASSPORT", loggedInUser);
-
-    cb(null, loggedInUser._id);
+    cb(null, { id: loggedInUser._id, role: loggedInUser.collection.collectionName });
 });
 
 passport.deserializeUser((userIdFromSession, cb) => {
-    User.findById(userIdFromSession, (err, userDocument) => {
-        if (err) {
-            cb(err);
-            return;
-        }
+    if (userIdFromSession.role === "users") {
+        User.findById(userIdFromSession.id, (err, userDocument) => {
+            if (err) {
+                cb(err);
+                return;
+            }
 
-        cb(null, userDocument);
-    });
-});
+            cb(null, userDocument);
+        });
+    } else if (userIdFromSession.role === "companies") {
+        Company.findById(userIdFromSession.id, (err, userDocument) => {
+            if (err) {
+                cb(err);
+                return;
+            }
 
-passport.deserializeUser((companyIdFromSession, cb) => {
-    Company.findById(companyIdFromSession, (err, companyDocument) => {
-        if (err) {
-            cb(err);
-            return;
-        }
-
-        cb(null, companyDocument);
-    });
+            cb(null, userDocument);
+        });
+    }
 });
