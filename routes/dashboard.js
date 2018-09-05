@@ -17,6 +17,7 @@ router.get('/dashboard', (req, res) => {
 			.then((events) => {
 				//res.send(events);
 				let user = req.user;
+
 				res.render('dashboard', { events, user });
 				// console.log('gettin you some events');
 			})
@@ -31,11 +32,17 @@ router.get('/dashboard', (req, res) => {
 router.post('/dashboard/attend', (req, res) => {
 	//WE NEED TO RETRIEVE ID OF THE EVENT CLICKED AND ID OF THE USER
 	const { _id } = req.body;
-	let user = req.user;
+	let user = req.user._id;
+	console.log(typeOf.user);
 	Events.findById({ _id: _id }, function(err, event) {
 		const { attendees } = event;
-		if (attendees.includes(user.id)) throw err;
-		console.log(attendees.includes(user.id));
+		if (err) throw err;
+		if (!attendees.includes(user)) {
+			console.log(typeOf.attendees);
+			console.log('FREIER WEG');
+		} else {
+			console.log('you are already attending');
+		}
 
 		// Events.findByIdAndUpdate(
 		// 	{ _id: _id },
