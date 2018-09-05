@@ -1,41 +1,67 @@
+html {
+	font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #f4f4f4;
+}
 body {
 	margin: 0;
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-	color: #00b7ff;
-}
 nav {
+	z-index: 2;
+	background-color: #f76f8e;
+	color: white;
 	position: absolute;
 	padding: 0.5vh 0;
 	top: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 3vh;
+	height: 5vh;
 	width: 100vw;
 	border-bottom: 2px solid black;
-	.nav {
+	.menu-list {
+		margin-right: 3vw;
+		a {
+			text-decoration: none;
+			font-weight: 700;
+			color: white;
+		}
 	}
 }
-
 #body-container {
 	top: 3vh;
-	padding: 16px;
 	position: relative;
 }
-.event-container {
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+.container {
+	padding: 0.5vh 3vw 1vh;
 }
-
+.event-container {
+	position: relative;
+	display: block;
+}
+#tag-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 3vw;
+	a {
+		text-decoration: none;
+		display: inline-block;
+		background-color: #0a0908;
+		color: white;
+		padding: 0.5vh 0.5vw;
+		margin: 0 1vw;
+	}
+}
 .eventPartial {
-	width: 75vw;
+	background-blend-mode: darken;
+	background: rgb(199, 86, 112);
+	background-size: cover;
+	width: 100%;
 	padding: 2vh 1vw;
-	background-color: antiquewhite;
+	margin: 0 0;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	color: white;
 	h2 a {
 		text-decoration: none;
 		color: white;
@@ -45,18 +71,38 @@ nav {
 .btn {
 	display: inline-block;
 	padding: 6px 8px;
-	border-radius: 18px;
-	border: 2px solid black;
+	border: none;
+	background-color: #0a0908;
 	text-decoration: none;
-	color: black;
+	color: #f4f4f4;
 	font-weight: 700;
 }
+#header-picture {
+	min-height: 350px;
+	background-position: 0 0;
+	background-size: cover;
+}
+#page-title {
+	color: #f4f4f4;
+}
 
-@media only screen and(min-width: 800px) {
+@media only screen and (min-width: 800px) {
+	.event-container {
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		display: flex;
+	}
+	#event-wrap {
+		width: 72%;
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.eventPartial {
+		width: 36%;
+		margin: 1.5vh 1.5vw;
+	}
 	.side-container {
 		float: right;
-	}
-	.event-partial {
-		width: 30vw;
 	}
 }

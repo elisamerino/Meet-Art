@@ -1,0 +1,31 @@
+{{#with event}}
+ <div id="header-picture" style="background-image: url('{{this.picture}}')">
+ 
+    <h1 id="page-title" >{{this.title}}</h1>
+    </div>
+  <div class="container">
+ 
+
+<div id="tag-wrapper">
+  <h3>Tags</h3>
+  <a href="/dashboard/{{this.type}}">{{this.type}}</a> 
+</div>
+
+
+    <p> {{this.date}}, {{this.city}}</p>
+     <p> Venue: {{this.venue}}</p>
+     
+    <p>{{this.description}}</p>
+    <p> Attendees: {{this.attendees}}</p>
+   
+    
+    {{#if this.website}}
+    <a href="{{this}}">web</a>
+     {{/if}}
+
+    {{/with}}
+    <form action="/dashboard/attend" method="POST">
+                    <input type="hidden" name="_id" value={{this._id}}>
+                    <button id="delete" class="btn">Attend</button>
+</form>
+  </div>

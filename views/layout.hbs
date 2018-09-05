@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <nav>
-      <h1>{{title}}</h1> <div> <a href="/dashboard">home</a> <a href="/user/private/">{{user.username}}</a> <a href="/auth/logout">log out</a></div>
+      <h1>{{title}}</h1> <div class="menu-list"> <a href="/dashboard">home</a> <a href="/user/private/">{{user.username}}</a> <a href="/auth/logout">log out</a></div>
     </nav>
 
 <div id="body-container">
