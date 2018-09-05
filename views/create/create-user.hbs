@@ -1,15 +1,17 @@
-<h3></h3>
-Create your user profile!
-</h3>
-<form method="POST" action="/user/edit" id="usrform" encType="multipart/form-data">
+<div class="card">
+    <h3>
+        Create your user profile!
+    </h3>
+    <form method="POST" action="/user/edit" id="usrform" encType="multipart/form-data">
 
-    <input type="text" name="username" placeholder="username"><br>
-    <input type="email" name="email" placeholder="email"><br>
-    <input type="file" name="picture" placeholder="picture"><br>
-    <textarea type="text" form="usrform" name="presentation" placeholder="presentation"></textarea><br>
-    <input type="text" name="hobbies" placeholder="hobbies"><br>
-    <input type="text" name="city" placeholder="city"><br>
-    <input type="text" name="relationship_status" placeholder="relationship_status"><br>
+        <input class="text" type="text" name="username" placeholder="username"><br>
+        <input class="text" type="email" name="email" placeholder="email"><br>
 
-    <input type="submit" name="" id="submit">
-</form>
+        <textarea type="text" form="usrform" name="presentation" placeholder="presentation"></textarea><br>
+        <input class="text" type="text" name="hobbies" placeholder="hobbies"><br>
+        <input class="text" type="text" name="city" placeholder="city"><br>
+        <input class="text" type="text" name="relationship_status" placeholder="relationship_status"><br>
+        <input class="text" type="file" name="picture" placeholder="picture"><br>
+        <input class="button1" type="submit" name="" id="submit">
+    </form>
+</div>

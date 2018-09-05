@@ -6,24 +6,26 @@ const ensureLogin = require("connect-ensure-login");
 
 const User = require("../models/User");
 
-router.get("/", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
-    console.log("hi from private");
+router.get("/user_profile", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
     res.render("user_profile", { user: req.user });
 });
 
 /* GET home page */
-router.get("/private/:id", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
-    id = req.params.id;
-    User.findById(id, (err, user) => {
-        if (err) console.log(err);
-        console.log("value is", user);
-        res.render("user_profile", { user });
-    });
-});
+// router.get("/private/:id", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
+//     id = req.params.id;
+//     User.findById(id, (err, user) => {
+//         if (err) console.log(err);
+//         res.render("user_profile", { user });
+//     });
+// });
 
-router.get("/edit/:id", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
-    let user = req.user;
-    res.render("create/create-user", { user });
+// router.get("/edit/:id", ensureLogin.ensureLoggedIn("/auth/login"), (req, res, next) => {
+//     let user = req.user;
+//     res.render("create/create-user", { user });
+// });
+
+router.get("/create-user", (res, req, next) => {
+    res.render("create/create-user", { user: req.user });
 });
 
 router.post("/edit", (req, res, next) => {
@@ -48,7 +50,7 @@ router.post("/edit", (req, res, next) => {
             .then(() => {
                 console.log("updated user");
 
-                res.redirect("/dashboard");
+                res.redirect("/user_profile");
             })
             .catch(error => {
                 console.log(error);

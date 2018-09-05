@@ -11,4 +11,12 @@ router.get("/", (req, res, next) => {
     res.render("index");
 });
 
+router.get("/user_profile", (req, res, next) => {
+    res.render("user_profile", { user: req.user });
+});
+
+router.get("/company_profile", (req, res, next) => {
+    res.render("company_profile", { user: req.user });
+});
+
 module.exports = router;

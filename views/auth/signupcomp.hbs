@@ -1,24 +1,27 @@
 <!-- views/auth/signup.hbs -->
-<h2>Company Signup</h2>
+<div class="card">
+    <h2>Sign up your Company!
+    </h2>
 
-<form action="/auth/signupcomp" method="POST" id="form-container">
-    <label for="username">Company</label>
-    <input id="username" type="text" name="username" placeholder="JonSnow">
+    <form action="/auth/signupcomp" method="POST" id="form-container">
+        <label for="username">Company</label>
+        <input id="username" type="text" name="username" placeholder="JonSnow">
 
-    <br><br>
+        <br><br>
 
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Your password">
-    <br> {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Your password">
+        <br> {{#if message }}
+        <div class="error-message">{{ message }}</div>
+        {{/if}}
 
-    <br><br>
+        <br><br>
 
-    <button>Create account</button>
+        <button class="button1">Create account</button>
 
-    <p class="account-message">
-        Do you already have an account?
-        <a href="/auth/logincomp">Login Company</a>
-    </p>
-</form>
+        <p class="account-message">
+            Do you already have an account?
+            <a href="/auth/logincomp">Login Company</a>
+        </p>
+    </form>
+</div>
