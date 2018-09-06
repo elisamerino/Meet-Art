@@ -16,7 +16,8 @@ const flash = require('connect-flash');
 
 mongoose.Promise = Promise;
 mongoose
-	.connect(process.env.MONGODB_URI)
+	.connect('mongodb://localhost/project', { useMongoClient: true })
+	// .connect(process.env.MONGODB_URI)
 	.then(() => {
 		console.log('Connected to Mongo!');
 	})
@@ -62,7 +63,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 });
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Meet Art';
 
 // Enable authentication using session + passport
 app.use(

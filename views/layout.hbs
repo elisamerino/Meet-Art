@@ -7,7 +7,11 @@
   </head>
   <body>
     <nav>
-      <h1>{{title}}</h1> <div class="menu-list"> <a href="/dashboard">home</a> <a href="/user/private/">{{user.username}}</a> <a href="/auth/logout">log out</a></div>
+      <h1><a href="/dashboard">{{title}}</a></h1> <div class="menu-list">
+      <a href="/user/private/">{{user.username}}</a>
+      <a href="/user/list/">users</a>
+      <a href="/auth/logout">log out</a>
+      </div>
     </nav>
 
 <div id="body-container">

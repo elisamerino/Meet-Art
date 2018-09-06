@@ -7,11 +7,7 @@ const eventSchema = new Schema({
 	description: String,
 	city: String,
 	date: Date,
-	type: {
-		type: String,
-		enum: [ 'Art', 'Cinema', 'Theatre', 'Other' ],
-		default: 'Other'
-	},
+	type: [ String ],
 	attendees: [ { type: Schema.Types.ObjectId, ref: 'User' } ],
 	venue: String
 });

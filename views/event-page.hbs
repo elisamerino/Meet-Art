@@ -16,7 +16,9 @@
      <p> Venue: {{this.venue}}</p>
      
     <p>{{this.description}}</p>
-    <p> Attendees: {{this.attendees}}</p>
+   {{#if attendantsNum}}
+    <p>{{attendantsNum}} attending</p>
+   {{/if}}
    
     
     {{#if this.website}}
@@ -24,8 +26,9 @@
      {{/if}}
 
     {{/with}}
-    <form action="/dashboard/attend" method="POST">
-                    <input type="hidden" name="_id" value={{this._id}}>
-                    <button id="delete" class="btn">Attend</button>
+<form action="/{{this._id}}/attend" method="POST">
+  <input type="hidden" name="_id" value={{this._id}}>
+  <button id="attend" class="btn">Attend {{this._id}}</button>
 </form>
+
   </div>

@@ -1,0 +1,10 @@
+<h2>users</h2>
+
+<div clas="event-wrap"> 
+<p>{{users.username}}</p>  
+{{#each users}}
+
+{{> userPartials this}}
+
+{{/each}}
+</div>
