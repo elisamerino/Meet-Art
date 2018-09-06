@@ -1,19 +1,25 @@
-<br>
+<div class="container dash-container">
+    <br>
 <br>
 <h1> Hey, {{user.username}}! What are you up to?
 </h1>
 <div id="tag-wrapper">
     <h3>Filter</h3>
-    {{#each events}}
-    <a href="/dashboard/{{this.type}}">{{this.type}}</a>
-    {{/each}}
-
+   
+    <a href="/dashboard/Cinema">Cinema</a>
+    <a href="/dashboard/Theatre">Theatre</a>
+    <a href="/dashboard/Concert">Concerts</a>
+    <a href="/dashboard/Art">Art</a>
+    <a href="/dashboard/Other">Other</a>
+    <a href="/dashboard">All</a>
+ 
 </div>
-<div class="event-container">
+
     <div id="event-wrap">
         {{#each events}} {{> eventPartials this}} {{/each}}
     </div>
 
-</div>
 
-<a href="/event/create"><button type="button">+</button></a>
+
+<a href="/event/create" class="btn create-btn"><i class="fas fa-plus"></i></a>
+</div>

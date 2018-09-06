@@ -20,7 +20,7 @@
     <p>{{attendantsNum}} attending</p>
    {{/if}}
    
-    <form action="/{{this.id}}/attend" method="POST">
+    <form action="/event/{{this.id}}/attend" method="POST">
   <input type="hidden" name="_id" value={{this.id}}>
   <button id="attend" class="btn">Attend</button>
 </form>

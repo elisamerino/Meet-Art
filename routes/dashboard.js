@@ -25,6 +25,59 @@ router.get('/dashboard', (req, res) => {
 	}
 });
 
+router.get('/dashboard/Cinema', (req, res) => {
+	if (req.user === undefined) {
+		res.redirect('auth/signup');
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
+		res.render('create/create-user', { user: req.user });
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'companies') {
+		console.log(req.user.collection.collectionName);
+		res.render('create/create-company', { user: req.user });
+	} else {
+		Events.find({ type: 'Cinema' }).then((events) => {
+			//res.send(events);
+
+			let user = req.user;
+			res.render('dashboard', { events, user });
+		});
+	}
+});
+
+router.get('/dashboard/Art', (req, res) => {
+	if (req.user === undefined) {
+		res.redirect('auth/signup');
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
+		res.render('create/create-user', { user: req.user });
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'companies') {
+		console.log(req.user.collection.collectionName);
+		res.render('create/create-company', { user: req.user });
+	} else {
+		Events.find({ type: 'Art' }).then((events) => {
+			//res.send(events);
+
+			let user = req.user;
+			res.render('dashboard', { events, user });
+		});
+	}
+});
+router.get('/dashboard/Theatre', (req, res) => {
+	if (req.user === undefined) {
+		res.redirect('auth/signup');
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
+		res.render('create/create-user', { user: req.user });
+	} else if (req.user.email === undefined && req.user.collection.collectionName === 'companies') {
+		console.log(req.user.collection.collectionName);
+		res.render('create/create-company', { user: req.user });
+	} else {
+		Events.find({ type: 'Theatre' }).then((events) => {
+			//res.send(events);
+
+			let user = req.user;
+			res.render('dashboard', { events, user });
+		});
+	}
+});
+
 // res.render("dashboard");
 
 router.post('/dashboard/attend', (req, res) => {
@@ -35,7 +88,19 @@ router.post('/dashboard/attend', (req, res) => {
 		if (err) console.log(err);
 
 		if (event.attendees.indexOf(user) === 0) {
-			console.log('already attending');
+			console.log('youre already attending');
+			Events.findByIdAndUpdate(
+				{ _id: _id },
+				{
+					$pull: { attendees: user }
+				},
+				{ new: true },
+				(err, Event) => {
+					if (err) console.log(err);
+
+					res.redirect('/dashboard');
+				}
+			);
 		} else {
 			Events.findByIdAndUpdate(
 				{ _id: _id },

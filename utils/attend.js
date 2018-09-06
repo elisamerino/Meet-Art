@@ -1,23 +1,27 @@
-function attend(event) {
-	console.log(event);
-	// Events.findById({ _id: _id }, (err, event) => {
-	// 	if (err) console.log(err);
+const Events = require('../models/Events');
+const User = require('../models/User');
 
-	// 	if (event.attendees.indexOf(user) === 0) {
-	// 		console.log('already attending');
-	// 	} else {
-	// 		Events.findByIdAndUpdate(
-	// 			{ _id: _id },
-	// 			{
-	// 				$push: { attendees: user }
-	// 			},
-	// 			{ new: true },
-	// 			(err, Event) => {
-	// 				if (err) console.log(err);
-	// 			}
-	// 		);
-	// 	}
-	// });
+function attend(event, user) {
+	Events.findById({ _id: event }, (err, event) => {
+		if (err) console.log(err);
+		//console.log('ATTEND THIS EVENT: ' + event);
+
+		if (event.attendees.indexOf(user) === 0) {
+			console.log('already attending');
+		} else {
+			Events.findByIdAndUpdate(
+				{ _id: event._id },
+				{
+					$push: { attendees: user }
+				},
+				{ new: true },
+				(err, Event) => {
+					if (err) console.log(err);
+					console.log(event);
+				}
+			);
+		}
+	});
 }
 
 module.exports = {

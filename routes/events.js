@@ -71,6 +71,12 @@ router.get('/:id', (req, res, next) => {
 		});
 	}
 });
+
+router.post('/:id/attend', (req, res) => {
+	console.log('I FOUNT STUFF ' + req.params.id);
+	attend(req.params.id, req.user);
+});
+
 router.get('/:id/edit', (req, res) => {
 	Events.findById(req.params.id).then((event) => {
 		res.render('create/edit-event', { event });
@@ -78,36 +84,51 @@ router.get('/:id/edit', (req, res) => {
 });
 
 router.post('/:id/edit', (req, res) => {
-	// if (!req.files) {
-	const { title, type, description, date, picture, city, venue } = req.body;
+	if (!req.files) {
+		const { title, type, description, date, picture, city, venue } = req.body;
 
-	Events.findByIdAndUpdate(req.params.id, {
-		title,
-		type,
-		description,
-		date,
-		picture,
-		city,
-		venue
-	})
-		.then(() => {
-			let event = req.params.id;
-			console.log('updated event' + event);
-
-			res.redirect({ event }, '/:id');
+		Events.findByIdAndUpdate(req.params.id, {
+			title,
+			type,
+			description,
+			date,
+			city,
+			venue
 		})
-		.catch((error) => {
-			console.log(error);
-		});
-	// } else {
-	// 	const file = req.files.picture;
-	// 	file.mv(`public/images/${req.params.id}.jpg`, function(err) {});
-	// }
-});
+			.then(() => {
+				let event = req.params.id;
+				console.log('updated event ' + event);
+				// res.send('UPDATE DONE');
+				res.redirect('/dashboard');
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	} else {
+		const file = req.files.picture;
+		file.mv(`public/images/${req.params.id}.jpg`, function(err) {
+			const { title, type, description, date, picture, city, venue } = req.body;
 
-router.post('/:id/attend', (req, res) => {
-	console.log(req.params.id);
-	attend(req.params.id);
+			Events.findByIdAndUpdate(req.params.id, {
+				title,
+				type,
+				description,
+				date,
+				picture,
+				city,
+				venue
+			})
+				.then(() => {
+					let event = req.params.id;
+					console.log('updated event ' + event);
+
+					res.redirect('/dashboard');
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		});
+	}
 });
 
 module.exports = router;

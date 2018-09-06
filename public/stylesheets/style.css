@@ -22,11 +22,11 @@ nav {
       color: white; }
 
 .container {
-  padding: 0.5vh 3vw 1vh; }
-
-.event-container {
-  position: relative;
-  display: block; }
+  padding: 6vh 3vw 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
 
 #tag-wrapper {
   display: flex;
@@ -64,6 +64,10 @@ nav {
   color: #f4f4f4;
   font-weight: 700; }
 
+.create-btn {
+  text-align: center;
+  justify-self: flex-end; }
+
 #header-picture {
   min-height: 350px;
   background-position: 0 0;
@@ -84,9 +88,7 @@ nav {
     justify-content: space-evenly; }
   .eventPartial {
     width: 36%;
-    margin: 1.5vh 1.5vw; }
-  .side-container {
-    float: right; } }
+    margin: 1.5vh 1.5vw; } }
 
 .img-circle {
   object-fit: cover;
