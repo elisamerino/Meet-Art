@@ -2,10 +2,12 @@
     <br>
     <br>
     <h3>Edit your Event</h3>
-    <form method="POST" action="/event/{{event.id}}/edit" id="usrform" encType="multipart/form-data">
+    {{#with event}}
+    <img src="/images/{{this.id}}.jpg" alt="{{this.id}}">
+    <form method="POST" action="/event/{{this.id}}/edit" id="usrform" encType="multipart/form-data">
 
 
-        <input type="text" class="text" name="title" placeholder="{{event.title}}"><br>
+        <input type="text" class="text" name="title" value="{{this.title}}"><br>
 
         <input type="radio" class="radio" name="type" value="Cinema" checked>Cinema
         <input type="radio" class="radio" name="type" value="Theatre">Theatre
@@ -13,12 +15,13 @@
         <input type="radio" class="radio" name="type" value="Other">Other<br>
 
         <input type="date" class="text" name="date" placeholder="date"><br>
-        <textarea type="text" name="description" placeholder="description"></textarea><br>
-        <input type="text" class="text" name="venue" placeholder="venue"><br>
-        <input type="text" class="text" name="city" placeholder="city"><br>
-        <label for="picture">Picture</label>
+        <textarea type="text" name="description" placeholder="{{this.description}}" value="{{this.description}}"></textarea><br>
+        <input type="text" class="text" name="venue" value="{{this.venue}}"><br>
+        <input type="text" class="text" name="city" value="{{this.city}}"><br>
+        <label for="picture">Change picture</label>
         <input type="file" name="picture" placeholder="picture">
 
         <input class="button1" type="submit" name="" id="submit">
     </form>
+    {{/with}}
 </div>
