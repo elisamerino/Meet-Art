@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <nav>
-      <h1><a href="/dashboard">{{title}}</a></h1> <div class="menu-list">
-      <a href="/user/private/">{{user.username}}</a>
-      <a href="/user/list/">users</a>
-      <a href="/auth/logout">log out</a>
-      </div>
-    </nav>
 
 <head>
   <title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans|Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
 </head>
+
 
 <body>
   <nav>
     <h1>{{title}}</h1>
-    <div class="menu-list"> <a href="/dashboard">home</a> <a href="/user_profile">{{user.username}}</a> <a href=" /auth/logout ">log
-        out</a></div>
+    <div class="menu-list"> <a href="/dashboard">SEE EVENTS |</a> <a href="/user_profile">{{user.username}}</a> PROFILE |
+      <a href=" /auth/logout ">
+        LOG OUT
+
+      </a></div>
   </nav>
 
-  <div id="body-container ">
-    {{{body}}}
+  {{{body}}}
   </div>
   <script src='/javascripts/script.js'></script>
 </body>

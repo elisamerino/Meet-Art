@@ -1,5 +1,5 @@
 html {
-    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 18px "Source Code Pro";
     background-color: #f4f4f4;
 }
 body {
@@ -8,7 +8,7 @@ body {
 
 nav {
     z-index: 2;
-    background-color: #f76f8e;
+    background-color: black;
     color: white;
     position: absolute;
     padding: 0.5vh 0;
@@ -28,10 +28,7 @@ nav {
         }
     }
 }
-#body-container {
-    top: 3vh;
-    position: relative;
-}
+
 .container {
     padding: 0.5vh 3vw 1vh;
 }
@@ -118,10 +115,14 @@ nav {
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
     text-align: center;
-    margin-top: 100px;
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
 }
 
 .title {
@@ -135,11 +136,12 @@ nav {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: rgb(0, 51, 153);
+    background-color: black;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    font-family: "Source Code Pro";
 }
 
 .a2 {
@@ -180,4 +182,29 @@ input[type="email"] {
 
 .radio {
     vertical-align: middle;
+}
+
+.pic {
+    background-image: url("/images/cine.jpg");
+    background-size: cover;
+    height: 800px;
+    text-align: center;
+}
+
+.MeetArt {
+    font-family: "Sawarabi Gothic";
+    font-size: 60px;
+    color: white;
+}
+
+.signup {
+    background-image: url("/images/yayoi.jpg");
+    height: 800px;
+    background-size: cover;
+}
+
+.login {
+    background-image: url("/images/lightred.jpg");
+    height: 800px;
+    background-size: cover;
 }
