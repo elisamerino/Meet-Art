@@ -1,19 +1,24 @@
-<div class="card">
-    <br>
-    <br>
+<div class="create">
+    <div class="card-container">
 
-    <h2>Edit your company profile!</h2>
-    <form method="POST" action="/company/edit" id="usrform" encType="multipart/form-data">
+        <div class="card">
+            <br>
+            <br>
 
-        <input type="text" class="text" name="username" placeholder={{user.username}}><br>
-        <input type="email" name="email" placeholder="{{user.email}}"><br>
+            <h2>Edit your company profile!</h2>
+            <form method="POST" action="/company/edit" id="usrform" encType="multipart/form-data">
 
-        <input type="text" class="text" name="type" placeholder="{{user.type}}"><br>
-        <textarea type="text" form="usrform" name="presentation" placeholder="{{user.presentation}}"></textarea><br>
-        <input type="text" class="text" name="city" placeholder="{{user.city}}"><br>
-        <input type="text" class="text" name="website" placeholder="{{user.website}}"><br>
-        <label for="picture">Picture</label>
-        <input type="file" name="picture" placeholder="picture"><br>
-        <input class="button1" type="submit" name="" id="submit">
-    </form>
+                <input type="text" class="text" name="username" placeholder={{user.username}}><br>
+                <input type="email" name="email" placeholder="{{user.email}}"><br>
+
+                <input type="text" class="text" name="type" placeholder="{{user.type}}"><br>
+                <textarea type="text" form="usrform" name="presentation" placeholder="{{user.presentation}}"></textarea><br>
+                <input type="text" class="text" name="city" placeholder="{{user.city}}"><br>
+                <input type="text" class="text" name="website" placeholder="{{user.website}}"><br>
+                <label for="picture">Picture</label>
+                <input type="file" name="picture" placeholder="picture"><br>
+                <input class="button1" type="submit" name="" id="submit">
+            </form>
+        </div>
+    </div>
 </div>

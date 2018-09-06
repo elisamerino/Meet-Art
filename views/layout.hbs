@@ -1,22 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-=======
-  <head>
-    <title>{{title}}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <nav>
-      <h1><a href="/dashboard">{{title}}</a></h1>
-      <div class="menu-list">
-      <a href="/user/private/">{{user.username}}</a>
-      <a href="/user/list/">users</a>
-      <a href="/auth/logout">log out</a>
-      </div>
-    </nav>
->>>>>>> 0453899a86c12cc09f654a7fd30c1367868b8602
 
 <head>
   <title>{{title}}</title>
@@ -27,10 +10,15 @@
 </head>
 
 
-<body>
+<body leftmargin="0" topmargin=0 " rightmargin="0 " bottommargin="0 " marginwidth="0 " marginheight=0">
   <nav>
-    <h1>{{title}}</h1>
-    <div class="menu-list"> <a href="/dashboard">SEE EVENTS |</a> <a href="/user_profile">{{user.username}}</a> PROFILE |
+    <h1 class="paddit">{{title}}</h1>
+    <div class="menu-list"> <a href="/dashboard">SEE EVENTS |</a>
+
+      <a href="/profile">{{user.username}}</a>
+
+
+      |
       <a href=" /auth/logout ">
         LOG OUT
 

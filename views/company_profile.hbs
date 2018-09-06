@@ -1,22 +1,28 @@
-<div class="card">
-    <img src="/images/{{user.id}}.jpg" class="img-circle" height="200" width="200">
-    <h1>{{user.username}}</h1>
-    <p class="title">Company</p></b>
-    <b><p>Who are we?
-            <p></b>
-    </p> {{user.presentation}}
-    </p>
-    <b><p>Type of venue</p></b>
-    <p>{{user.type}}</p>
-    <b><p> Where are we? </p></b>
-    <p> {{user.city}}
-    </p>
-    <b><p class="link"><a class="a2" href="https://" + {{user.website}}>Our website</a> </p></b>
+<div class="profile">
+    <div class="card-container">
+        <div class="card">
+            <br>
+            <br>
+            <img src="/images/{{user.id}}.jpg" class="img-circle" height="200" width="200">
+            <h1>{{user.username}}</h1>
+            <p class="title">Company</p></b>
+            <b><p>Who are we?
+                    <p></b>
+            </p> {{user.presentation}}
+            </p>
+            <b><p>Type of venue</p></b>
+            <p>{{user.type}}</p>
+            <b><p> Where are we? </p></b>
+            <p> {{user.city}}
+            </p>
+            <b><p class="link"><a class="a2" href="https://" + {{user.website}}>Our website</a> </p></b>
 
-    </p>
+            </p>
 
 
-    <a href="company/edit">
-        <button type="button" class="button1">Edit </button>
-    </a>
+            <a href="company/edit">
+                <button type="button" class="button1">Edit </button>
+            </a>
+        </div>
+    </div>
 </div>
