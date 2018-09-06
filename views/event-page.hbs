@@ -1,5 +1,5 @@
 {{#with event}}
- <div id="header-picture" style="background-image: url('{{this.picture}}')">
+ <div id="header-picture" style="background-image: url('/images/{{this.id}}.jpg')">
  
     <h1 id="page-title" >{{this.title}}</h1>
     </div>
@@ -20,15 +20,12 @@
     <p>{{attendantsNum}} attending</p>
    {{/if}}
    
-    
-    {{#if this.website}}
-    <a href="{{this}}">web</a>
-     {{/if}}
-
-    {{/with}}
-<form action="/{{this._id}}/attend" method="POST">
-  <input type="hidden" name="_id" value={{this._id}}>
-  <button id="attend" class="btn">Attend {{this._id}}</button>
+    <form action="/{{this.id}}/attend" method="POST">
+  <input type="hidden" name="_id" value={{this.id}}>
+  <button id="attend" class="btn">Attend</button>
 </form>
+<a class="btn" href="/event/{{this.id}}/edit">Edit</a>
+  
+    {{/with}}
 
   </div>

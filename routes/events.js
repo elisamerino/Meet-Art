@@ -4,18 +4,27 @@ const router = express.Router();
 const { attend } = require('../utils/attend');
 // const fs = require("fs");
 const Events = require('../models/Events');
+const User = require('../models/User');
 
 router.get('/create', (req, res, next) => {
 	res.render('create/post-event', { user: req.user });
 });
 
 router.post('/create', (req, res, next) => {
+	// Events.create(event, (err) => {
+	// 	if (err) {
+	// 		throw err;
+	// 	}
+	// 	console.log(`Created ${event.name} event`);
+	// 	mongoose.connection.close();
+	// });
 	if (!req.files) return res.status(400).send('No files were uploaded.');
 	const file = req.files.picture;
-	file.mv(`public/images/${req.event.id}.jpg`, function(err) {
+	console.log(req.files);
+	file.mv(`public/images/${req.files.picture.name}.jpg`, function(err) {
 		if (err) return res.status(500).send(err);
 
-		const { title, type, description, picture, city, venue } = req.body;
+		const { title, type, description, date, picture, city, venue } = req.body;
 
 		new Events({
 			title,
@@ -29,8 +38,8 @@ router.post('/create', (req, res, next) => {
 			.save()
 			.then(() => {
 				console.log('event created');
-
-				res.redirect('/:id'); //link to the event/id/profile
+				res.redirect('/dashboard');
+				//res.redirect('/:id'); //link to the event/id/profile
 			})
 			.catch((error) => {
 				console.log(error);
@@ -62,38 +71,38 @@ router.get('/:id', (req, res, next) => {
 		});
 	}
 });
-
-router.post('/:id/edit', (req, res, next) => {
-	if (!req.files) return res.status(400).send('No files were uploaded.');
-	const file = req.files.picture;
-	if (file === '') {
-		res.render('auth/signup', { message: 'You need to upload an event pic' });
-		return;
-	}
-	file.mv(`public/images/${req.params.id}.jpg`, function(err) {
-		if (err) return console.log(err);
-
-		const { title, type, description, picture, city, venue } = req.body;
-
-		Events.findByIdAndUpdate(req.params.id, {
-			title,
-			type,
-			description,
-			date,
-			picture,
-			city,
-			venue
-		})
-			.then(() => {
-				let event = req.params.id;
-				console.log('updated event');
-
-				res.redirect('/event-page', { event });
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+router.get('/:id/edit', (req, res) => {
+	Events.findById(req.params.id).then((event) => {
+		res.render('create/edit-event', { event });
 	});
+});
+
+router.post('/:id/edit', (req, res) => {
+	// if (!req.files) {
+	const { title, type, description, date, picture, city, venue } = req.body;
+
+	Events.findByIdAndUpdate(req.params.id, {
+		title,
+		type,
+		description,
+		date,
+		picture,
+		city,
+		venue
+	})
+		.then(() => {
+			let event = req.params.id;
+			console.log('updated event' + event);
+
+			res.redirect({ event }, '/:id');
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+	// } else {
+	// 	const file = req.files.picture;
+	// 	file.mv(`public/images/${req.params.id}.jpg`, function(err) {});
+	// }
 });
 
 router.post('/:id/attend', (req, res) => {
