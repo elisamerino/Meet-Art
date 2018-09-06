@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <h1><a href="/dashboard">{{title}}</a></h1> <div class="menu-list">
+      <a href="/user/private/">{{user.username}}</a>
+      <a href="/user/list/">users</a>
+      <a href="/auth/logout">log out</a>
+      </div>
+    </nav>
 
 <head>
   <title>{{title}}</title>

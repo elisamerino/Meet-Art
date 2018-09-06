@@ -1,6 +1,6 @@
 <div class="card">
     <h3>Add your Event</h3>
-    <form method="POST" action="/{{event.id}}/edit" id="usrform" encType="multipart/form-data">
+    <form method="POST" action="/event/edit" id="usrform" encType="multipart/form-data">
 
 
         <input type="text" class="text" name="title" placeholder="title"><br>
@@ -14,6 +14,7 @@
         <textarea type="text" name="description" placeholder="description"></textarea><br>
         <input type="text" class="text" name="venue" placeholder="venue"><br>
         <input type="text" class="text" name="city" placeholder="city"><br>
+        <label for="picture">Picture</label>
         <input type="file" name="picture" placeholder="picture">
 
         <input class="button1" type="submit" name="" id="submit">
