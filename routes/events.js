@@ -11,40 +11,35 @@ router.get('/create', (req, res, next) => {
 });
 
 router.post('/create', (req, res, next) => {
-	// Events.create(event, (err) => {
-	// 	if (err) {
-	// 		throw err;
-	// 	}
-	// 	console.log(`Created ${event.name} event`);
-	// 	mongoose.connection.close();
-	// });
 	if (!req.files) return res.status(400).send('No files were uploaded.');
 	const file = req.files.picture;
-	console.log(req.files);
-	file.mv(`public/images/${req.files.picture.name}.jpg`, function(err) {
-		if (err) return res.status(500).send(err);
+	console.log(file);
 
-		const { title, type, description, date, picture, city, venue } = req.body;
+	//if (err) return res.status(500).send(err);
 
-		new Events({
-			title,
-			type,
-			description,
-			date,
-			picture,
-			city,
-			venue
-		})
-			.save()
-			.then(() => {
-				console.log('event created');
+	const { title, type, description, date, picture, city, venue } = req.body;
+
+	new Events({
+		title,
+		type,
+		description,
+		date,
+		picture,
+		city,
+		venue
+	})
+		.save()
+		.then((event) => {
+			file.mv(`public/images/${event._id}.jpg`, function(err) {
+				console.log('event created,pic uploaded, pic name: ' + req.params.id);
 				res.redirect('/dashboard');
-				//res.redirect('/:id'); //link to the event/id/profile
-			})
-			.catch((error) => {
-				console.log(error);
 			});
-	});
+
+			//res.redirect('/:id'); //link to the event/id/profile
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 });
 
 // /* GET home page */
