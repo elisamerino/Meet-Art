@@ -24,15 +24,13 @@ router.get("/user_profile", ensureLogin.ensureLoggedIn("/auth/login"), (req, res
 //     res.render("create/create-user", { user });
 // });
 
-router.get("/create-user", (res, req, next) => {
-    res.render("create/create-user", { user: req.user });
+router.get("/edit", (req, res, next) => {
+    res.render("create/edit-profile", { user: req.user });
 });
 
 router.post("/edit", (req, res, next) => {
     if (!req.files) return res.status(400).send("No files were uploaded.");
     const file = req.files.picture;
-    const filename = file.name;
-
     req.files.picture.mv(`public/images/${req.user.id}.jpg`, function(err) {
         if (err) return res.status(500).send(err);
 

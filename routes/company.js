@@ -9,9 +9,10 @@ router.get("/", ensureLogin.ensureLoggedIn("/auth/logincomp"), (req, res, next) 
     res.render("company_profile", { user: req.user });
 });
 
-router.get("/create-company", (req, res, next) => {
-    res.render("create/create-company", { user: req.user });
+router.get("/edit", (req, res, next) => {
+    res.render("create/edit-company", { user: req.user });
 });
+
 router.get("/private/:id", ensureLogin.ensureLoggedIn("/auth/logincomp"), (req, res, next) => {
     id = req.param.id;
     Company.findById(id).then(user => res.render("company_profile", { user }));

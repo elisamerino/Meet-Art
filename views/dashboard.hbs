@@ -1,24 +1,22 @@
-<h1> Hey, {{user.username}}! What are you up to? 
+<h1> Hey, {{user.username}}! What are you up to?
 </h1>
 <div id="tag-wrapper">
     <h3>Filter</h3>
-  {{#each events}}
+    {{#each events}}
     <a href="/dashboard/{{this.type}}">{{this.type}}</a>
-{{/each}}
-    
+    {{/each}}
+
 </div>
 <div class="event-container">
-<div id="event-wrap">    
-{{#each events}}
-{{> eventPartials this}}
-{{/each}}
-</div>
-<div class="side-container">
-    <ul>
-        <li>hello</li>
-        <li>world</li>
-    </ul>
-</div>
+    <div id="event-wrap">
+        {{#each events}} {{> eventPartials this}} {{/each}}
+    </div>
+    <div class="side-container">
+        <ul>
+            <li>hello</li>
+            <li>world</li>
+        </ul>
+    </div>
 </div>
 
-<a class="btn" href="/event/new">+</a>
+<a href="/event/create"><button type="button">+</button></a>

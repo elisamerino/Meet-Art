@@ -1,0 +1,18 @@
+<div class="card">
+    <h3>
+        Edit your user profile!
+    </h3>
+    <form method="POST" action="/user/edit" id="usrform" encType="multipart/form-data">
+
+
+        <input class="text" type="text" name="username" placeholder="{{user.username}}">
+        <input class="text " type="email " name="email " placeholder="email{{user.email}} "><br>
+
+        <textarea type="text " form="usrform " name="presentation " placeholder="{{user.presentation}} "></textarea><br>
+        <input class="text " type="text " name="hobbies " placeholder="{{user.hobbies}} "><br>
+        <input class="text " type="text " name="city " placeholder="{{user.city}} "><br>
+        <input class="text " type="text " name="relationship_status " placeholder="{{user.relationship_status}} "><br>
+        <input type="file " name="picture " placeholder="picture "><br>
+        <input class="button1 " type="submit " name=" " id="submit ">
+    </form>
+</div>

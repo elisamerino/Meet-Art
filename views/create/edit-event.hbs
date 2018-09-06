@@ -1,9 +1,9 @@
 <div class="card">
-    <h3>Add your Event</h3>
-    <form method="POST" action="/{{event.id}}/edit" id="usrform" encType="multipart/form-data">
+    <h3>Edit your Event</h3>
+    <form method="POST" action="/event/{{event.id}}/edit" id="usrform" encType="multipart/form-data">
 
 
-        <input type="text" class="text" name="title" placeholder="title"><br>
+        <input type="text" class="text" name="title" placeholder="{{event.title}}"><br>
 
         <input type="radio" class="radio" name="type" value="Cinema" checked>Cinema
         <input type="radio" class="radio" name="type" value="Theatre">Theatre
