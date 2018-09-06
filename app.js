@@ -19,8 +19,8 @@ mongoose.Promise = Promise;
 // 	.connect(process.env.MONGODB_URI)
 // 	.then(() => {
 mongoose
-	.connect('mongodb://localhost/project', { useMongoClient: true })
-	// .connect(process.env.MONGODB_URI)
+	// .connect('mongodb://localhost/project', { useMongoClient: true })
+	.connect(process.env.MONGODB_URI)
 	.then(() => {
 		console.log('Connected to Mongo!');
 	})
