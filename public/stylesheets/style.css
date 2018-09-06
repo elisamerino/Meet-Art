@@ -41,6 +41,11 @@ nav {
     padding: 0.5vh 0.5vw;
     margin: 0 1vw; }
 
+.event-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex; }
+
 .eventPartial {
   background-blend-mode: darken;
   background: #c75670;
@@ -58,6 +63,7 @@ nav {
 .btn {
   display: inline-block;
   padding: 6px 8px;
+  margin: auto 1vw;
   border: none;
   background-color: #0a0908;
   text-decoration: none;
@@ -78,7 +84,7 @@ nav {
 
 @media only screen and (min-width: 800px) {
   .event-container {
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     display: flex; }
   #event-wrap {
@@ -87,7 +93,7 @@ nav {
     display: flex;
     justify-content: space-evenly; }
   .eventPartial {
-    width: 36%;
+    width: 42%;
     margin: 1.5vh 1.5vw; } }
 
 .img-circle {

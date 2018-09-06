@@ -3,7 +3,7 @@
  
     <h1 id="page-title" >{{this.title}}</h1>
     </div>
-  <div class="container">
+  <div class="container event-container event-content">
  
 
 <div id="tag-wrapper">
@@ -13,13 +13,14 @@
 
 
     <p> {{this.date}}, {{this.city}}</p>
+      <br>
      <p> Venue: {{this.venue}}</p>
-     
+     <br>
     <p>{{this.description}}</p>
    {{#if attendantsNum}}
     <p>{{attendantsNum}} attending</p>
    {{/if}}
-   
+     <br>
     <form action="/event/{{this.id}}/attend" method="POST">
   <input type="hidden" name="_id" value={{this.id}}>
   <button id="attend" class="btn">Attend</button>

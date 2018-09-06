@@ -25,7 +25,8 @@ router.get('/dashboard', (req, res) => {
 	}
 });
 
-router.get('/dashboard/Cinema', (req, res) => {
+router.get('/dashboard/:type', (req, res) => {
+	let type = req.params.type;
 	if (req.user === undefined) {
 		res.redirect('auth/signup');
 	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
@@ -34,42 +35,7 @@ router.get('/dashboard/Cinema', (req, res) => {
 		console.log(req.user.collection.collectionName);
 		res.render('create/create-company', { user: req.user });
 	} else {
-		Events.find({ type: 'Cinema' }).then((events) => {
-			//res.send(events);
-
-			let user = req.user;
-			res.render('dashboard', { events, user });
-		});
-	}
-});
-
-router.get('/dashboard/Art', (req, res) => {
-	if (req.user === undefined) {
-		res.redirect('auth/signup');
-	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
-		res.render('create/create-user', { user: req.user });
-	} else if (req.user.email === undefined && req.user.collection.collectionName === 'companies') {
-		console.log(req.user.collection.collectionName);
-		res.render('create/create-company', { user: req.user });
-	} else {
-		Events.find({ type: 'Art' }).then((events) => {
-			//res.send(events);
-
-			let user = req.user;
-			res.render('dashboard', { events, user });
-		});
-	}
-});
-router.get('/dashboard/Theatre', (req, res) => {
-	if (req.user === undefined) {
-		res.redirect('auth/signup');
-	} else if (req.user.email === undefined && req.user.collection.collectionName === 'users') {
-		res.render('create/create-user', { user: req.user });
-	} else if (req.user.email === undefined && req.user.collection.collectionName === 'companies') {
-		console.log(req.user.collection.collectionName);
-		res.render('create/create-company', { user: req.user });
-	} else {
-		Events.find({ type: 'Theatre' }).then((events) => {
+		Events.find({ type }).then((events) => {
 			//res.send(events);
 
 			let user = req.user;
