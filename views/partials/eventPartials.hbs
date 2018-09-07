@@ -2,7 +2,9 @@
 <div class="eventPartial" style="background-image: url('/images/{{this.id}}.jpg')">
     <h2><a href="event/{{this.id}}">{{this.title}}</a></h2>
 <aside>{{this.date}}</aside>
-<p>{{this.attendees}} attending</p>
+{{#each this.attendees}}
+<p>{{this.username}} attending</p>
+{{/each}}
 <form action="/dashboard/attend" method="POST">
   <input type="hidden" name="_id" value={{this._id}}>
   <button id="delete" class="btn">Attend</button>
