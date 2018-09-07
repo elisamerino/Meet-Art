@@ -1,28 +1,30 @@
-<div class="card-container">
-    <div class="card">
-        <br>
-        <br>
-        <h3>Add your Event</h3>
-        <form method="POST" action="/event/create" id="usrform" encType="multipart/form-data">
-
-
-            <input type="text" class="text" name="title" placeholder="title"><br>
-
-            <input type="radio" class="radio" name="type" value="Cinema" checked>Cinema
-            <input type="radio" class="radio" name="type" value="Theatre">Theatre
-            <input type="radio" class="radio" name="type" value="Art">Art
-            <input type="radio" class="radio" name="type" value="Art">Music
-            <input type="radio" class="radio" name="type" value="Other">Other<br>
-
-            <input type="date" class="text" name="date" placeholder="date"><br>
-            <textarea type="text" name="description" placeholder="description"></textarea><br>
-            <input type="text" class="text" name="venue" placeholder="venue"><br>
-            <input type="text" class="text" name="city" placeholder="city"><br>
-            <label for="picture">Picture</label>
-            <input type="file" name="picture" placeholder="picture">
+<div class="eventclass">
+    <div class="card-container">
+        <div class="card">
             <br>
             <br>
-            <input class="button1" type="submit" name="" id="submit">
-        </form>
+            <h3>Add your Event</h3>
+            <form method="POST" action="/event/create" id="usrform" encType="multipart/form-data">
+
+
+                <input type="text" class="text" name="title" placeholder="title"><br>
+
+                <input type="radio" class="radio" name="type" value="Cinema" checked>Cinema
+                <input type="radio" class="radio" name="type" value="Theatre">Theatre
+                <input type="radio" class="radio" name="type" value="Art">Art
+                <input type="radio" class="radio" name="type" value="Art">Music
+                <input type="radio" class="radio" name="type" value="Other">Other<br>
+
+                <input type="date" class="text" name="date" placeholder="date"><br>
+                <textarea type="text" name="description" placeholder="description"></textarea><br>
+                <input type="text" class="text" name="venue" placeholder="venue"><br>
+                <input type="text" class="text" name="city" placeholder="city"><br>
+                <label for="picture">Picture</label>
+                <input type="file" name="picture" placeholder="picture">
+                <br>
+                <br>
+                <input class="button1" type="submit" name="" id="submit">
+            </form>
+        </div>
     </div>
 </div>
