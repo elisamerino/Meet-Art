@@ -1,32 +1,37 @@
 {{#with event}}
- <div id="header-picture" style="background-image: url('/images/{{this.id}}.jpg')">
- 
-    <h1 id="page-title" >{{this.title}}</h1>
-    </div>
-  <div class="container event-container event-content">
- 
+<div id="header-picture" style="background-image: url('/images/{{this.id}}.jpg')">
 
-<div id="tag-wrapper">
-  <h3>Tags</h3>
-  <a href="/dashboard/{{this.type}}">{{this.type}}</a> 
+  <h1 id="page-title">{{this.title}}</h1>
 </div>
+<div class=" showevent">
 
 
-    <p> {{this.date}}, {{this.city}}</p>
-      <br>
-     <p> Venue: {{this.venue}}</p>
-     <br>
-    <p>{{this.description}}</p>
-   {{#if attendantsNum}}
-    <p>{{attendantsNum}} attending</p>
-   {{/if}}
-     <br>
-    <form action="/event/{{this.id}}/attend" method="POST">
-  <input type="hidden" name="_id" value={{this.id}}>
-  <button id="attend" class="btn">Attend</button>
-</form>
-<a class="btn" href="/event/{{this.id}}/edit">Edit</a>
-  
-    {{/with}}
-
+  <div id="tag-wrapper">
+    <h3>Tags</h3>
+    <a href="/dashboard/{{this.type}}">{{this.type}}</a>
   </div>
+
+
+  <p> {{this.date}} {{this.city}}<br></p>
+
+
+  <p> Venue: {{this.venue}}</p>
+  <br>
+  <p>{{this.description}}</p>
+  {{#if attendantsNum}}
+  <p>{{attendantsNum}} attending</p>
+  {{/if}}
+  <br>
+  <form action="/event/{{this.id}}/attend" method="POST">
+    <input type="hidden" name="_id" value={{this.id}}>
+    <button id="attend" class="btn">Attend</button>
+  </form>
+</div>
+<div class="displaybtn">
+  <a class="btn" href="/event/{{this.id}}/edit">Edit</a>
+
+  <br>
+  <br><a class="btn" href="/event/{{this.id}}/delete">Remove</a>
+
+  {{/with}}
+</div>
