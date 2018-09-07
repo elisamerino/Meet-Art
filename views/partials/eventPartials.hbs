@@ -2,11 +2,11 @@
   <h2><a href="event/{{this.id}}">{{this.title}}</a></h2>
   <aside>{{this.date}}</aside>
   {{#each this.attendees}}
-  <p>{{this.username}} attending</p>
+<p class="info"><span>{{this.username}}</span> attending</p>
   {{/each}}
   <form action="/dashboard/attend" method="POST">
     <input type="hidden" name="_id" value={{this._id}}>
-    <button id="delete" class="btn">Attend</button>
+    <button id="delete" class="btn attend-btn">Attend</button>
   </form>
 
 </div>

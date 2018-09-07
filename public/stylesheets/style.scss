@@ -1,279 +1,296 @@
 html {
-    font: 18px "Source Code Pro";
-    background-color: #f4f4f4;
-    border: none;
+	font: 18px "Source Code Pro";
+	background-color: #f4f4f4;
+	border: none;
 }
 
 nav {
-    background-color: black;
-    color: white;
-    position: absolute;
+	background-color: black;
+	color: white;
+	position: absolute;
 
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 7vh;
-    width: 100vw;
-    border-bottom: 2px solid black;
-    .menu-list {
-        margin-right: 3vw;
-        a {
-            text-decoration: none;
-            font-weight: 700;
-            color: white;
-        }
-    }
+	top: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 7vh;
+	width: 100vw;
+	border-bottom: 2px solid black;
+	.menu-list {
+		margin-right: 3vw;
+		a {
+			text-decoration: none;
+			font-weight: 700;
+			color: white;
+		}
+	}
 }
 
 .container {
-    padding: 6vh 3vw 1vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+	padding: 6vh 3vw 1vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 #tag-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 3vw;
-    a {
-        text-decoration: none;
-        display: inline-block;
-        background-color: #0a0908;
-        color: white;
-        padding: 0.5vh 0.5vw;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 3vw;
+	a {
+		text-decoration: none;
+		display: inline-block;
+		background-color: #0a0908;
+		color: white;
+		padding: 0.5vh 0.5vw;
 
-        margin: 0 1vw;
-    }
+		margin: 0 1vw;
+	}
 }
 
 .event-container {
-    justify-content: center;
-    flex-wrap: wrap;
-    display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	display: flex;
 }
 
 .eventPartial {
-    background-blend-mode: darken;
-    background: rgb(199, 86, 112);
-    background-size: cover;
-
-    width: 100%;
-    padding: 2vh 1vw;
-    margin: 0 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    color: white;
-    h2 a {
-        text-decoration: none;
-        color: white;
-        font-weight: 700;
-    }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-blend-mode: darken;
+	background: rgb(199, 86, 112);
+	background-size: cover;
+	min-height: 200px;
+	width: 100%;
+	padding: 2vh 1vw;
+	margin: 0 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	color: white;
+	h2 a {
+		text-decoration: none;
+		color: white;
+		font-weight: 700;
+	}
 }
+
 .btn {
-    display: inline-block;
-    padding: 6px 8px;
-    margin: auto 1vw;
-    border: none;
-    background-color: #0a0908;
-    text-decoration: none;
-    color: #f4f4f4;
-    font-weight: 700;
-    font-size: 20px;
-    font-family: "Source Code Pro";
-    width: 100px;
-    height: 30px;
-    text-align: center;
+	display: inline-block;
+	padding: 6px 8px;
+	margin: auto 1vw;
+	border: none;
+	background-color: #0a0908;
+	text-decoration: none;
+	color: #f4f4f4;
+	font-weight: 700;
+	font-size: 1rem;
+	font-family: "Source Code Pro";
+	width: 100px;
+	text-align: center;
+}
+.info {
+	span {
+		font-weight: 700;
+		font-size: 2rem;
+	}
+}
+.attend-btn {
+	align-self: flex-end;
 }
 
 .create-btn {
-    text-align: center;
-    justify-self: flex-end;
+	text-align: center;
+	justify-self: flex-end;
 }
 
 #header-picture {
-    min-height: 350px;
-    background-position: 0 0;
-    background-size: cover;
+	min-height: 350px;
+	background-position: 0 0;
+	background-size: cover;
 }
 #page-title {
-    color: #f4f4f4;
+	color: #f4f4f4;
 }
 
 @media only screen and (min-width: 800px) {
-    .event-container {
-        justify-content: center;
-        flex-wrap: wrap;
-        display: flex;
-    }
-    #event-wrap {
-        width: 72%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .eventPartial {
-        width: 42%;
-        margin: 1.5vh 1.5vw;
-    }
+	.event-container {
+		justify-content: center;
+		flex-wrap: wrap;
+		display: flex;
+	}
+	#event-wrap {
+		width: 72%;
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.eventPartial {
+		width: 42%;
+		margin: 1.5vh 1.5vw;
+	}
 }
 
 .img-circle {
-    object-fit: cover;
-    border-radius: 50%;
-    height: 250px;
-    width: 250px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	height: 250px;
+	width: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
 }
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 500px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 500px;
 
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    padding: 16px 10px 10px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	border-radius: 4px;
+	padding: 16px 10px 10px;
 }
 
 .title {
-    color: grey;
-    font-size: 18px;
+	color: grey;
+	font-size: 18px;
 }
 
 .button1 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: black;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    font-family: "Source Code Pro";
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: black;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	font-family: "Source Code Pro";
 }
 
 .a2 {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
+	text-decoration: none;
+	font-size: 22px;
+	color: black;
 }
 
 button:hover,
 a:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 .link {
-    color: blue;
-    text-decoration: underline;
+	color: blue;
+	text-decoration: underline;
 }
 
 .text {
-    width: 90%;
-    padding: 20px 20px;
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 5px;
+	width: 90%;
+	padding: 20px 20px;
+	box-sizing: border-box;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 textarea {
-    width: 88%;
-    height: 150px;
+	width: 88%;
+	height: 150px;
 }
 
 input[type="email"] {
-    width: 90%;
-    padding: 12px 20px;
-    padding-right: 10px;
-    box-sizing: border-box;
+	width: 90%;
+	padding: 12px 20px;
+	padding-right: 10px;
+	box-sizing: border-box;
 }
 
 .radio {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 .pic {
-    background-image: url("/images/cine.jpg");
-    background-size: cover;
-    height: 900px;
-    width: 1600px;
-    text-align: center;
+	background-image: url("/images/cine.jpg");
+	background-size: cover;
+	height: 900px;
+	width: 1600px;
+	text-align: center;
 }
 
 .MeetArt {
-    font-family: "Sawarabi Gothic";
-    font-size: 60px;
-    color: white;
+	font-family: "Sawarabi Gothic";
+	font-size: 60px;
+	color: white;
 }
 
 .signup {
-    background-image: url("/images/yayoi.jpg");
-    height: 900px;
-    background-size: cover;
+	background-image: url("/images/yayoi.jpg");
+	height: 900px;
+	background-size: cover;
 }
 
 .login {
-    background-image: url("/images/lightred.jpg");
-    height: 900px;
-    background-size: cover;
+	background-image: url("/images/lightred.jpg");
+	height: 900px;
+	background-size: cover;
 }
 
 .card-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .create {
-    background-image: url("/images/light.jpg");
-    height: 900px;
-    background-size: cover;
+	background-image: url("/images/light.jpg");
+	height: 900px;
+	background-size: cover;
 }
 
 .profile {
-    background-image: url("/images/yayoi3.jpg");
-    height: 900px;
-    background-size: cover;
+	background-image: url("/images/yayoi3.jpg");
+	height: 900px;
+	background-size: cover;
 }
 
 .logbutton {
-    width: 300px;
-    padding: 20px;
-    cursor: pointer;
-    font-family: Source Code Pro;
-    font-weight: bold;
+	width: 300px;
+	padding: 20px;
+	cursor: pointer;
+	font-family: Source Code Pro;
+	font-weight: bold;
 
-    color: #fff;
-    font-size: 150%;
-    border: 2px solid white;
-    background-color: Transparent;
+	color: #fff;
+	font-size: 150%;
+	border: 2px solid white;
+	background-color: Transparent;
 }
 
 body {
-    border: none;
+	border: none;
 }
 
 .paddit {
-    padding-left: 25px;
+	padding-left: 25px;
+	a {
+		text-decoration: none;
+		color: #f4f4f4;
+	}
 }
 
 .showevent {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding-left: 200px;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-left: 200px;
 }
 
 .displaybtn {
-    padding-left: 800px;
-    justify-content: center;
-    padding-bottom: 100px;
+	padding-left: 800px;
+	justify-content: center;
+	padding-bottom: 100px;
 }
