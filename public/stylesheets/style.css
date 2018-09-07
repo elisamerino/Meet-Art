@@ -81,7 +81,7 @@ nav {
 
 .info span {
   font-weight: 700;
-  font-size: 2rem; }
+  font-size: 1.1rem; }
 
 .attend-btn {
   align-self: flex-end; }
@@ -248,5 +248,10 @@ body {
   padding-left: 800px;
   justify-content: center;
   padding-bottom: 100px; }
+
+.eventclass {
+  background-image: url("/images/yayoi2.jpg");
+  height: 900px;
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */
