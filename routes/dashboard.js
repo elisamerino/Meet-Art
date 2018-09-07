@@ -16,10 +16,14 @@ router.get('/dashboard', (req, res) => {
 		console.log(req.user.collection.collectionName);
 		res.render('create/create-company', { user: req.user });
 	} else {
-		Events.find().then((events) => {
-			//res.send(events);
-
+		Events.find().populate({ path: 'attendees', select: 'username -_id' }).then((events) => {
+			events.forEach((element) => {
+				if (element.attendees.length > 0) {
+					console.log('INVITED ' + element.attendees[0]);
+				}
+			});
 			let user = req.user;
+
 			res.render('dashboard', { events, user });
 		});
 	}
