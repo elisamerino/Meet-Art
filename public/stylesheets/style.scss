@@ -240,21 +240,22 @@ input[type="email"] {
 
 .card-container {
 	height: 100vh;
+	padding: 7% 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
-.create {
-	background-image: url("/images/light.jpg");
+.background-container {
+	margin-top: 7vh;
 	height: 900px;
 	background-size: cover;
+}
+.create {
+	background-image: url("/images/light.jpg");
 }
 
 .profile {
 	background-image: url("/images/yayoi3.jpg");
-	height: 900px;
-	background-size: cover;
 }
 
 .logbutton {
@@ -297,6 +298,13 @@ body {
 
 .eventclass {
 	background-image: url("/images/yayoi2.jpg");
-	height: 900px;
-	background-size: cover;
+}
+.dash-container {
+	display: flex;
+	flex-direction: column;
+}
+.flex-line {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }

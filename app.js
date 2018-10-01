@@ -15,10 +15,10 @@ const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 
 mongoose.Promise = Promise;
+// mongoose
+// 	.connect(process.env.MONGODB_URI)
 mongoose
-	.connect(process.env.MONGODB_URI)
-	// mongoose
-	// 	.connect('mongodb://localhost/project', { useMongoClient: true })
+	.connect('mongodb://localhost/project', { useMongoClient: true })
 	.then(() => {
 		console.log('Connected to Mongo!');
 	})
