@@ -11,3 +11,8 @@ Want to go out to the museum but need a little push? find a buddy!
 `// mongoose  
 	// 	.connect('mongodb://localhost/project', { useMongoClient: true })`  
 4. npm run dev
+  
+    
+      
+      
+or go here [meet-art](https://meet-art.herokuapp.com/)
