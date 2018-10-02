@@ -215,9 +215,11 @@ input[type="email"] {
 .pic {
 	background-image: url("/images/cine.jpg");
 	background-size: cover;
-	height: 900px;
-	width: 1600px;
 	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 900px;
+	width: 100vw;
 }
 
 .MeetArt {

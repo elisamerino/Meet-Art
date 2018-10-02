@@ -183,9 +183,11 @@ input[type="email"] {
 .pic {
   background-image: url("/images/cine.jpg");
   background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 900px;
-  width: 1600px;
-  text-align: center; }
+  width: 100vw; }
 
 .MeetArt {
   font-family: "Sawarabi Gothic";
