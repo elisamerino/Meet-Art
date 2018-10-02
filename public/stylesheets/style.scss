@@ -3,7 +3,9 @@ html {
 	background-color: #f4f4f4;
 	border: none;
 }
-
+body {
+	margin: 0 0;
+}
 nav {
 	background-color: black;
 	color: white;
@@ -110,9 +112,14 @@ nav {
 	min-height: 350px;
 	background-position: 0 0;
 	background-size: cover;
+	display: flex;
 }
 #page-title {
 	color: #f4f4f4;
+	margin: 6vh 6vw;
+	@media (min-width: 800px) {
+		margin: 12vh 6vw;
+	}
 }
 
 @media only screen and (min-width: 800px) {
@@ -146,7 +153,6 @@ nav {
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	width: 500px;
-
 	text-align: center;
 	background-color: rgb(255, 255, 255);
 	border-radius: 4px;
@@ -231,7 +237,12 @@ input[type="email"] {
 	height: 900px;
 	background-size: cover;
 }
-
+.divider {
+	height: 12vh;
+	@media only screen and (min-width: 800px) {
+		height: 25vh;
+	}
+}
 .login {
 	background-image: url("/images/lightred.jpg");
 	height: 900px;
@@ -239,14 +250,14 @@ input[type="email"] {
 }
 
 .card-container {
-	height: 100vh;
-	padding: 7% 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+
+	align-content: center;
+	@media (min-width: 800px) {
+	}
 }
 .background-container {
-	margin-top: 7vh;
 	height: 900px;
 	background-size: cover;
 }
@@ -269,10 +280,6 @@ input[type="email"] {
 	font-size: 150%;
 	border: 2px solid white;
 	background-color: Transparent;
-}
-
-body {
-	border: none;
 }
 
 .paddit {

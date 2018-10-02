@@ -3,6 +3,9 @@ html {
   background-color: #f4f4f4;
   border: none; }
 
+body {
+  margin: 0 0; }
+
 nav {
   background-color: black;
   color: white;
@@ -93,10 +96,15 @@ nav {
 #header-picture {
   min-height: 350px;
   background-position: 0 0;
-  background-size: cover; }
+  background-size: cover;
+  display: flex; }
 
 #page-title {
-  color: #f4f4f4; }
+  color: #f4f4f4;
+  margin: 6vh 6vw; }
+  @media (min-width: 800px) {
+    #page-title {
+      margin: 12vh 6vw; } }
 
 @media only screen and (min-width: 800px) {
   .event-container {
@@ -197,20 +205,23 @@ input[type="email"] {
   height: 900px;
   background-size: cover; }
 
+.divider {
+  height: 12vh; }
+  @media only screen and (min-width: 800px) {
+    .divider {
+      height: 25vh; } }
+
 .login {
   background-image: url("/images/lightred.jpg");
   height: 900px;
   background-size: cover; }
 
 .card-container {
-  height: 100vh;
-  padding: 7% 0;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-content: center; }
 
 .background-container {
-  margin-top: 7vh;
   height: 900px;
   background-size: cover; }
 
@@ -230,9 +241,6 @@ input[type="email"] {
   font-size: 150%;
   border: 2px solid white;
   background-color: Transparent; }
-
-body {
-  border: none; }
 
 .paddit {
   padding-left: 25px; }
